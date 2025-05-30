@@ -1,0 +1,417 @@
+Test Plan for OrangeHRM Web Application 
+
+Website: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login 
+
+ 
+
+1. Test Plan ID 
+
+TP-OHRM-2025-001 
+
+ 
+
+2. Title 
+
+End-to-End QA Test Plan for OrangeHRM Open Source Demo Web Application 
+
+ 
+
+3. Objective 
+
+To ensure the OrangeHRM application meets expected functional, UI, security, and performance standards and is free from critical bugs, user-friendly, and stable before deployment or further development. 
+
+ 
+
+4. Scope 
+
+In-Scope: 
+
+UI, Functional, and UX Testing of the OrangeHRM web application 
+
+Testing of core HR modules (Admin, PIM, Leave, Time, Recruitment, My Info, Performance) 
+
+Authentication, Authorization, and Access Controls 
+
+Automation of Regression Test Cases 
+
+Cross-browser Compatibility Testing 
+
+Out-of-Scope: 
+
+Backend database performance and schema testing 
+
+Mobile device testing unless specified 
+
+Integration with third-party payroll or email systems 
+
+ 
+
+5. Test Items 
+
+Login Page 
+
+Username and Password field validations 
+
+Login with valid credentials (admin/admin123) 
+
+Invalid login attempts and error messages 
+
+Password masking 
+
+Forgot Password functionality (if available) 
+
+Session management and timeout 
+
+Dashboard 
+
+Widget visibility and loading 
+
+Navigation to modules 
+
+Notifications functionality 
+
+Quick Launch actions 
+
+Admin Module 
+
+Add, edit, and delete users 
+
+Search and filter functionalities 
+
+Assign roles and permissions 
+
+Define job titles, pay grades, employment status 
+
+Manage organizational structure 
+
+Configure system settings (email, localization) 
+
+PIM (Personnel Information Management) 
+
+Add new employee 
+
+Edit/view employee information 
+
+Upload documents to employee profile 
+
+Employee search and filters 
+
+Terminate employee flow 
+
+Generate employee reports 
+
+Leave Module 
+
+Apply for leave 
+
+View leave list 
+
+Leave approval/rejection by manager 
+
+Manage leave entitlements and leave types 
+
+Configure leave policies 
+
+Holiday calendar display 
+
+Leave balance checking 
+
+Time Module 
+
+Timesheet creation and submission 
+
+Approval of timesheets 
+
+Attendance logs (Punch In/Out) 
+
+Attendance reports 
+
+Time settings configuration 
+
+Recruitment Module 
+
+Manage job vacancies 
+
+Add and manage candidates 
+
+Upload and validate resumes 
+
+Interview scheduling 
+
+Candidate status tracking 
+
+File format and size validation for uploads 
+
+My Info Module 
+
+View and update personal details 
+
+Update contact and emergency information 
+
+Manage documents and profile picture 
+
+View job and salary details (if visible) 
+
+Qualifications, skills, and memberships 
+
+Performance Module 
+
+Define job-specific KPIs 
+
+Add and manage performance reviews 
+
+Assign reviewers 
+
+View and generate performance reports 
+
+Directory 
+
+Employee search by name, job title, or department 
+
+Validate directory results and display logic 
+
+Pagination or scroll functionality 
+
+Maintenance 
+
+Admin-only access control 
+
+Data purge options 
+
+Access restrictions for non-admin users 
+
+Buzz (Social Feed) 
+
+Create and delete posts 
+
+Like and comment functionalities 
+
+Image or text post upload 
+
+Layout and responsiveness 
+
+ 
+
+6. Test Types 
+
+Type 
+
+Description 
+
+Functional Testing 
+
+Verifying each module's functionality as per specifications 
+
+UI/UX Testing 
+
+Checking design consistency, element alignment, and responsiveness 
+
+Regression Testing 
+
+Ensuring new changes don’t break existing functionality 
+
+Role-Based Testing 
+
+Validating access restrictions based on roles 
+
+Security Testing 
+
+Basic validation against XSS, SQL injection, and session vulnerabilities 
+
+Cross-Browser Testing 
+
+Verifying consistency across Chrome, Firefox, Safari, and Edge 
+
+Performance Testing 
+
+Page load times, especially in dashboard and reports 
+
+Usability Testing 
+
+Validating user flow, tooltips, and accessibility 
+
+ 
+
+7. Test Data 
+
+Valid admin credentials: 
+ Username: Admin 
+ Password: admin123 
+
+Dummy employee records 
+
+Various job titles, departments, and user roles 
+
+Attachments for upload: .docx, .pdf, .jpg, .png 
+
+Leave types with balances 
+
+Candidates with resumes for recruitment module 
+
+ 
+
+8. Test Strategy 
+
+Manual Testing 
+
+Exploratory and scenario-based testing 
+
+Edge case and negative case validations 
+
+Automation Testing 
+
+Use of Selenium with TestNG or Pytest 
+
+Test login/logout, employee CRUD, leave requests, and approvals 
+
+ 
+
+9. Deliverables 
+
+Test Plan Document 
+
+Test Case Document 
+
+Bug Reports and Logs 
+
+Requirement Traceability Matrix 
+
+Daily Execution Reports 
+
+Final Test Summary Report 
+
+Automated Script Repository 
+
+ 
+
+10. Entry Criteria 
+
+Application must be deployed on a test environment 
+
+Functional specifications are available 
+
+Test credentials and required access are provided 
+
+ 
+
+11. Exit Criteria 
+
+All critical and high severity bugs resolved 
+
+100% test case execution for high and medium priority scenarios 
+
+Regression cycle completed 
+
+Test summary shared and approved by QA lead 
+
+ 
+
+12. Test Schedule 
+
+Activity 
+
+Duration 
+
+Test Planning 
+
+2 days 
+
+Test Case Design 
+
+3 days 
+
+Environment Setup 
+
+1 day 
+
+Test Execution 
+
+5 to 8 days 
+
+Bug Retesting 
+
+2 days 
+
+Test Closure Report 
+
+1 day 
+
+ 
+
+13. Team and Resources 
+
+Role 
+
+Name/Tool 
+
+QA Lead 
+
+Mughda Bansal 
+
+Manual Testers 
+
+2 QA Engineers 
+
+Automation Engineer 
+
+1 QA Engineer 
+
+Test Management Tool 
+
+TestRail or Excel 
+
+Bug Tracking Tool 
+
+JIRA or GitHub Issues 
+
+Automation Tool 
+
+Selenium 
+
+Browsers 
+
+Chrome, Firefox, Safari, Edge 
+
+Performance Tool 
+
+JMeter 
+
+CI/CD (optional) 
+
+Jenkins 
+
+ 
+
+14. Risks and Mitigation 
+
+Risk 
+
+Mitigation 
+
+Demo environment instability 
+
+Schedule tests during off-peak hours 
+
+Inconsistent test data 
+
+Regularly backup and reset known test data 
+
+Limited access to backend 
+
+Focus only on front-end and observable behavior 
+
+Frequent UI updates 
+
+Version control automation scripts and review UI changes regularly 
+
+ 
+
+15. Assumptions 
+
+Admin credentials provided can access all features 
+
+Modules behave similarly to production systems 
+
+Environment is reasonably stable and up-to-date 
+
+ 
