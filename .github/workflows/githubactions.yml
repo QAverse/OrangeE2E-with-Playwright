@@ -11,17 +11,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout repository
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Java
+      # Step 2: Set up Java 22
+      - name: Set up Java 22
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
+          java-version: '22'
           distribution: 'temurin'
 
-      - name: Build project
+      # Step 3: Cache Maven dependencies (optional but speeds up builds)
+      - name: Cache Maven packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      # Step 4: Build project
+      - name: Build with Maven
         run: mvn install -DskipTests
 
-      - name: Run Selenium tests
+      # Step 5: Run Selenium/Playwright tests
+      - name: Run tests
         run: mvn test
